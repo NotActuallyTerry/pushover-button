@@ -3,10 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, World!</title>
+		<meta name="color-scheme" content="light dark">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.1.1/pico.classless.amber.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<title>Wake the Terry</title>
 	</head>
 	<body>
-		<h1 id="heading">Hello, World!</h1>
-		<p>This page comes from a static asset stored at `public/index.html` as configured in `wrangler.jsonc`.</p>
+	  <header>
+			<h1>Wake the Terry</h1>
+		</header>
+		<main>
+	   <form action="" method="post">
+			  <div>
+  			  <label for="name">Your name: </label>
+	 				<input type="text" name="name" id="name" required />
+				</div>
+				<div>
+				  <label for="message">Message: </label>
+					<input type="text" name="message" id="message" required />
+				</div>
+				<div>
+				  <input type="submit" value="Send message" />
+				</div>
+			</form>
+  	</main>
 	</body>
 </html>
