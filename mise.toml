@@ -1,0 +1,4 @@
+[tools]
+npm = "latest"
+"npm:typescript" = "latest"
+"npm:wrangler" = "latest"

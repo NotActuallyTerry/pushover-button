@@ -1,6 +1,6 @@
 {
   "name": "pushover-button",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
@@ -8,9 +8,16 @@
     "start": "wrangler dev"
   },
   "devDependencies": {
+    "@types/node": "^26.6.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^7.0.2",
     "wrangler": "^4.146.0"
   },
   "dependencies": {
+    "@hono/oauth-providers": "^0.9.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "hono-sessions": "^0.8.1",
     "pushover-sdk": "^0.4.1"
   }
 }
