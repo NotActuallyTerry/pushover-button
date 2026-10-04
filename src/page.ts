@@ -7,8 +7,8 @@ export interface PageLayoutProps {
 }
 
 const NotifyBanner = (message: string) => html`
-<h3>Sent message to Terry:</h3>
-<h3>${message}</h3>
+<h4>Sent message to Terry:</h4>
+<pre><code>${message}</code></pre>
 `
 
 const EmergencySwitch = html`
@@ -40,7 +40,7 @@ const PageLayout = (props: PageLayoutProps) => html`
                 <input type="text" name="message" id="message" required />
               </div>
               ${props.emerg}
-              <div>
+              <div style="margin-top: 1rem">
                 <input type="submit" value="Send message" />
               </div>
             </form>
