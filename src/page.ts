@@ -26,6 +26,7 @@ const PageLayout = (props: PageLayoutProps) => html`
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta name="color-scheme" content="light dark" />
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/2.1.1/pico.classless.amber.min.css" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+          <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⏰</text></svg>">
           <title>Wake the Terry</title>
         </head>
         <body>
