@@ -6,9 +6,9 @@ export interface PageLayoutProps {
   emerg: HtmlEscapedString | Promise<HtmlEscapedString>
 }
 
-const NotifyBanner = (message: string) => html`
-<h4>Sent message to Terry:</h4>
-<pre><code>${message}</code></pre>
+const NotifyBanner = (header: string, userMessage: string) => html`
+<h4>${header}</h4>
+<pre><code>${userMessage}</code></pre>
 `
 
 const EmergencySwitch = html`

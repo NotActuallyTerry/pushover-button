@@ -162,23 +162,23 @@ app.post('/', async (c) => {
         return c.text("Invalid POST body", 400 )
     }
 
-  let retBody
+  let messageHeader
 
 	if (Object.hasOwn(body, "emerg")) {
 		if (!session.get('can_send_emergency')) {
 			return c.text("Not authorised for EMERGENCY-level messages", 400 )
 		} else {
 			await pushover.sendMessage(pushoverMessageEmerg)
-			retBody = `Sent message ${body['message']} to Terry as EMERGENCY message.`
+			messageHeader = "Message sent to Terry as EMERGENCY message:"
 		}
 	} else {
 		await pushover.sendMessage(pushoverMessage)
-		retBody = `Sent message ${body['message']} to Terry.`
+		messageHeader = "Message sent to Terry:"
 	}
 
 	const props: PageLayoutProps = {
 		emerg: html``,
-		notify: NotifyBanner(body['message'])
+		notify: NotifyBanner(messageHeader, body['message'])
 	}
 
 	if (session.get('can_send_emergency')) {
