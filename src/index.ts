@@ -158,6 +158,10 @@ app.post('/', async (c) => {
 		return c.text("Invalid POST body",  400 )
 	}
 
+    if (typeof body['message'] !== 'string') {
+        return c.text("Invalid POST body", 400 )
+    }
+
   let retBody
 
 	if (Object.hasOwn(body, "emerg")) {
@@ -174,7 +178,7 @@ app.post('/', async (c) => {
 
 	const props: PageLayoutProps = {
 		emerg: html``,
-		notify: NotifyBanner
+		notify: NotifyBanner(body['message'])
 	}
 
 	if (session.get('can_send_emergency')) {

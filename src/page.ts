@@ -1,8 +1,14 @@
 import { html, raw } from 'hono/html'
 import { HtmlEscapedString } from 'hono/utils/html'
 
-const NotifyBanner = html`
-<h1>Message sent!</h1>
+export interface PageLayoutProps {
+  notify: HtmlEscapedString | Promise<HtmlEscapedString>
+  emerg: HtmlEscapedString | Promise<HtmlEscapedString>
+}
+
+const NotifyBanner = (message: string) => html`
+<h1>Sent message to Terry:</h1>
+<h1>${message}</h1>
 `
 
 const EmergencySwitch = html`
@@ -12,10 +18,6 @@ const EmergencySwitch = html`
 </div>
 `
 
-export interface PageLayoutProps {
-  notify: HtmlEscapedString | Promise<HtmlEscapedString>
-  emerg: HtmlEscapedString | Promise<HtmlEscapedString>
-}
 
 const PageLayout = (props: PageLayoutProps) => html`
         <html lang="en">
